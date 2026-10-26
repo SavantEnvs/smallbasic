@@ -1,0 +1,11 @@
+project: savantenvs/smallbasic
+target: sbasic
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/sbasic/testsuite
+cmds:
+  - cmd: /mayhem/sbasic -f -t @@
+    filepath: /input.bas
+    timeout: 5
+    env:
+      MFUZZ_COMPAT_LEVEL: "1"
